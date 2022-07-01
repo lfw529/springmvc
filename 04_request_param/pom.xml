@@ -40,8 +40,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
-                    <port>80</port>
-                    <path>/</path>
+                    <port>80</port> <!--tomcat 端口号-->
+                    <path>/</path> <!--虚拟目录-->
+                    <uriEncoding>UTF-8</uriEncoding> <!--访问路径编解码字符集，用于解决GET乱码-->
                 </configuration>
             </plugin>
         </plugins>
