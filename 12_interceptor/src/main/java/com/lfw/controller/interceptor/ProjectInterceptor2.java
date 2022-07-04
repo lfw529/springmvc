@@ -9,19 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-//定义拦截器类，实现HandlerInterceptor接口
-//注意当前类必须受Spring容器控制
-public class ProjectInterceptor implements HandlerInterceptor {
-
+public class ProjectInterceptor2 implements HandlerInterceptor {
     @Override
-    //原始方法调用前执行的内容
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse
-            response, Object handler) throws Exception {
-        String contentType = request.getHeader("Content-Type");
-//        System.out.println(handler.getClass());  //获取类名
-        HandlerMethod hm = (HandlerMethod) handler;
-        String methodName = hm.getMethod().getName();  //可以获取方法名称
-        System.out.println("preHandle..." + contentType);
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println("preHandle...222");
         return true;
     }
 
@@ -29,13 +20,13 @@ public class ProjectInterceptor implements HandlerInterceptor {
     //原始方法调用后执行的内容
     public void postHandle(HttpServletRequest request, HttpServletResponse
             response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println("postHandle...");
+        System.out.println("postHandle...222");
     }
 
     @Override
     //原始方法调用完成后执行的内容
     public void afterCompletion(HttpServletRequest request,
                                 HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("afterCompletion...");
+        System.out.println("afterCompletion...222");
     }
 }
